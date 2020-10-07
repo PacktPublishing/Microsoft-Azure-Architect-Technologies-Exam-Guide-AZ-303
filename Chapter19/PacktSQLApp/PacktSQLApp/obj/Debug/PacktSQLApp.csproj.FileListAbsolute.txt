@@ -1,0 +1,11 @@
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\bin\Debug\PacktSQLApp.exe.config
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\bin\Debug\PacktSQLApp.exe
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\bin\Debug\PacktSQLApp.pdb
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\bin\Debug\System.Data.SqlClient.dll
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\bin\Debug\System.Data.SqlClient.xml
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\obj\Debug\PacktSQLApp.csprojAssemblyReference.cache
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\obj\Debug\PacktSQLApp.csproj.CopyComplete
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\obj\Debug\PacktSQLApp.exe
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\obj\Debug\PacktSQLApp.pdb
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter19\PacktSQLApp\PacktSQLApp\bin\Debug\Newtonsoft.Json.xml

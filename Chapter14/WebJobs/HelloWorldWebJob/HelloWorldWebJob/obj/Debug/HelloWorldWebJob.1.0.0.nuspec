@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>HelloWorldWebJob</id>
+    <version>1.0.0</version>
+    <authors>HelloWorldWebJob</authors>
+    <owners>HelloWorldWebJob</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.2">
+        <dependency id="Microsoft.Azure.WebJobs" version="3.0.12" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Azure.WebJobs.Extensions" version="3.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Azure.WebJobs.Extensions.Storage" version="3.0.7" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="2.2.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Console" version="2.2.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\bin\Debug\netcoreapp2.2\HelloWorldWebJob.runtimeconfig.json" target="lib\netcoreapp2.2\HelloWorldWebJob.runtimeconfig.json" />
+    <file src="C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\bin\Debug\netcoreapp2.2\HelloWorldWebJob.dll" target="lib\netcoreapp2.2\HelloWorldWebJob.dll" />
+  </files>
+</package>

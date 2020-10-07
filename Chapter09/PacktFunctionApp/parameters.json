@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_PacktFunctionApp_name": {
+            "value": null
+        },
+        "serverfarms_CentralUSPlan_name": {
+            "value": null
+        },
+        "components_PacktFunctionApp_name": {
+            "value": null
+        },
+        "config_web_name": {
+            "value": null
+        },
+        "storageAccounts_packtfunctionapb805_name": {
+            "value": null
+        },
+        "alertrules_Failure_Anomalies___PacktFunctionApp_name": {
+            "value": null
+        },
+        "hostNameBindings_packtfunctionapp.azurewebsites.net_name": {
+            "value": null
+        }
+    }
+}

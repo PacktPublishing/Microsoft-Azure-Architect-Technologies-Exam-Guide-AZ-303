@@ -1,0 +1,11 @@
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\bin\Release\netcoreapp2.2\appsettings.json
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\bin\Release\netcoreapp2.2\HelloWorldWebJob.deps.json
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\bin\Release\netcoreapp2.2\HelloWorldWebJob.runtimeconfig.json
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\bin\Release\netcoreapp2.2\HelloWorldWebJob.runtimeconfig.dev.json
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\bin\Release\netcoreapp2.2\HelloWorldWebJob.dll
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\bin\Release\netcoreapp2.2\HelloWorldWebJob.pdb
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\obj\Release\netcoreapp2.2\HelloWorldWebJob.csproj.CoreCompileInputs.cache
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\obj\Release\netcoreapp2.2\HelloWorldWebJob.AssemblyInfoInputs.cache
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\obj\Release\netcoreapp2.2\HelloWorldWebJob.AssemblyInfo.cs
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\obj\Release\netcoreapp2.2\HelloWorldWebJob.dll
+C:\Users\SjoukjeZaal\Repos\Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300\Chapter14\WebJobs\HelloWorldWebJob\HelloWorldWebJob\obj\Release\netcoreapp2.2\HelloWorldWebJob.pdb

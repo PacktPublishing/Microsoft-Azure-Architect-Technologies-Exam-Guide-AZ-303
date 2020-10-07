@@ -1,0 +1,145 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "connections_rss_name": {
+            "defaultValue": "rss",
+            "type": "String"
+        },
+        "connections_office365_name": {
+            "defaultValue": "office365",
+            "type": "String"
+        },
+        "workflows_PackLogicApp_name": {
+            "defaultValue": "PackLogicApp",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/60ad227c-01b2-4da3-ac97-43e704fdba0c/resourceGroups/PackLogicApp/providers/Microsoft.Logic/workflows/PackLogicApp'.",
+            "type": "Microsoft.Logic/workflows",
+            "name": "[parameters('workflows_PackLogicApp_name')]",
+            "apiVersion": "2017-07-01",
+            "location": "centralus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "state": "Enabled",
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
+                    "triggers": {
+                        "When_a_feed_item_is_published": {
+                            "recurrence": {
+                                "frequency": "Minute",
+                                "interval": 3
+                            },
+                            "splitOn": "@triggerBody()?['value']",
+                            "type": "ApiConnection",
+                            "inputs": {
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['rss']['connectionId']"
+                                    }
+                                },
+                                "method": "get",
+                                "path": "/OnNewFeed",
+                                "queries": {
+                                    "feedUrl": "http://rss.cnn.com/rss/cnn_topstories.rss"
+                                }
+                            }
+                        }
+                    },
+                    "actions": {
+                        "For_each": {
+                            "foreach": "@triggerBody()?['links']",
+                            "actions": {
+                                "Send_an_email": {
+                                    "runAfter": {},
+                                    "type": "ApiConnection",
+                                    "inputs": {
+                                        "body": {
+                                            "Body": "Title: @{triggerBody()?['title']}\n\nPublished: @{triggerBody()?['publishDate']}\n\nLink: @{items('For_each')}",
+                                            "Subject": "New RSS Feed",
+                                            "To": "szaal@outlook.com"
+                                        },
+                                        "host": {
+                                            "connection": {
+                                                "name": "@parameters('$connections')['office365']['connectionId']"
+                                            }
+                                        },
+                                        "method": "post",
+                                        "path": "/Mail"
+                                    }
+                                }
+                            },
+                            "runAfter": {},
+                            "type": "Foreach"
+                        }
+                    },
+                    "outputs": {}
+                },
+                "parameters": {
+                    "$connections": {
+                        "value": {
+                            "office365": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_office365_name'))]",
+                                "connectionName": "office365",
+                                "id": "/subscriptions/60ad227c-01b2-4da3-ac97-43e704fdba0c/providers/Microsoft.Web/locations/centralus/managedApis/office365"
+                            },
+                            "rss": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', parameters('connections_rss_name'))]",
+                                "connectionName": "rss",
+                                "id": "/subscriptions/60ad227c-01b2-4da3-ac97-43e704fdba0c/providers/Microsoft.Web/locations/centralus/managedApis/rss"
+                            }
+                        }
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/connections', parameters('connections_office365_name'))]",
+                "[resourceId('Microsoft.Web/connections', parameters('connections_rss_name'))]"
+            ]
+        },
+        {
+            "comments": "",
+            "type": "Microsoft.Web/connections",
+            "name": "[parameters('connections_office365_name')]",
+            "apiVersion": "2016-06-01",
+            "location": "centralus",
+            "scale": null,
+            "properties": {
+                "displayName": "",
+                "customParameterValues": {},
+                "api": {
+                    "id": "[concat('/subscriptions/60ad227c-01b2-4da3-ac97-43e704fdba0c/providers/Microsoft.Web/locations/centralus/managedApis/', parameters('connections_office365_name'))]"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "",
+            "type": "Microsoft.Web/connections",
+            "name": "[parameters('connections_rss_name')]",
+            "apiVersion": "2016-06-01",
+            "location": "centralus",
+            "scale": null,
+            "properties": {
+                "displayName": "[concat(parameters('connections_rss_name'),'RSS', parameters('connections_rss_name'))]",
+                "customParameterValues": {},
+                "api": {
+                    "id": "[concat('/subscriptions/60ad227c-01b2-4da3-ac97-43e704fdba0c/providers/Microsoft.Web/locations/centralus/managedApis/', parameters('connections_rss_name'))]"
+                }
+            },
+            "dependsOn": []
+        }
+    ]
+}

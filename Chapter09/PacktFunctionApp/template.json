@@ -1,0 +1,337 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_PacktFunctionApp_name": {
+            "defaultValue": "PacktFunctionApp",
+            "type": "String"
+        },
+        "serverfarms_CentralUSPlan_name": {
+            "defaultValue": "CentralUSPlan",
+            "type": "String"
+        },
+        "components_PacktFunctionApp_name": {
+            "defaultValue": "PacktFunctionApp",
+            "type": "String"
+        },
+        "config_web_name": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "storageAccounts_packtfunctionapb805_name": {
+            "defaultValue": "packtfunctionapb805",
+            "type": "String"
+        },
+        "alertrules_Failure_Anomalies___PacktFunctionApp_name": {
+            "defaultValue": "Failure Anomalies - PacktFunctionApp",
+            "type": "String"
+        },
+        "hostNameBindings_packtfunctionapp.azurewebsites.net_name": {
+            "defaultValue": "packtfunctionapp.azurewebsites.net",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "",
+            "type": "microsoft.insights/alertrules",
+            "name": "[parameters('alertrules_Failure_Anomalies___PacktFunctionApp_name')]",
+            "apiVersion": "2014-04-01",
+            "location": "West Europe",
+            "tags": {
+                "hidden-link:/subscriptions/60ad227c-01b2-4da3-ac97-43e704fdba0c/resourceGroups/PacktFunctionApp/providers/microsoft.insights/components/PacktFunctionApp": "Resource"
+            },
+            "scale": null,
+            "properties": {
+                "name": "[parameters('alertrules_Failure_Anomalies___PacktFunctionApp_name')]",
+                "description": "",
+                "isEnabled": true,
+                "condition": {
+                    "odata.type": "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition",
+                    "dataSource": {
+                        "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
+                        "resourceUri": "[resourceId('microsoft.insights/components', parameters('components_PacktFunctionApp_name'))]",
+                        "metricNamespace": null,
+                        "metricName": "advanced::A3108E3D-5E26-44CF-B232-783F5E20EF10::ewAiAEgAeQBwAGUAcgBpAG8AbgBBAHAAcABsAGkAYwBhAHQAaQBvAG4AUwBpAGQAIgA6AG4AdQBsAGwALAAiAEgAeQBwAGUAcgBpAG8AbgBTAHUAYgBqAGUAYwB0AFMAaQBkACIAOgBuAHUAbABsACwAIgBIAHkAcABlAHIAaQBvAG4ATwBiAHMAZQByAHYAZQByAFMAaQBkACIAOgBuAHUAbABsACwAIgBDAHUAcwB0AG8AbQBlAHIAQQBjAGMAbwB1AG4AdABJAGQAIgA6ACIAMAAwADAAMAAwADAAMAAwAC0AMAAwADAAMAAtADAAMAAwADAALQAwADAAMAAwAC0AMAAwADAAMAAwADAAMAAwADAAMAAwADAAIgAsACIAQQBwAHAAbABpAGMAYQB0AGkAbwBuAE4AYQBtAGUAIgA6AG4AdQBsAGwALAAiAEEAcABwAGwAaQBjAGEAdABpAG8AbgBJAGQAIgA6AG4AdQBsAGwALAAiAFAAcgBvAGYAaQBsAGUASQBkACIAOgAwACwAIgBXAGkAbgBkAG8AdwBTAGkAegBlAEkAbgBNAGkAbgB1AHQAZQBzACIAOgA2ADAALAAiAE0AZQB0AHIAaQBjAE4AYQBtAGUAIgA6ACIAIgAsACIAVABoAHIAZQBzAGgAbwBsAGQAIgA6ADIALgAwACwAIgBBAGwAZQByAHQAVABlAG0AcABsAGEAdABlAEkAZAAiADoAIgAiACwAIgBSAHUAbABlAEkAZAAiADoAIgAiACwAIgBSAHUAbABlAE4AYQBtAGUAIgA6ACIAIgAsACIAUgB1AGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AIgA6ACIAIgAsACIAUgBlAHMAbwB1AHIAYwBlAEkAZAAiADoAbgB1AGwAbAAsACIAUwB1AGIAcwBjAHIAaQBwAHQAaQBvAG4ASQBkACIAOgBuAHUAbABsACwAIgBBAGcAZwByAGUAZwBhAHQAZQBGAHUAbgBjAHQAaQBvAG4AIgA6ACIAIgAsACIAQwBvAG0AcABhAHIAaQBzAG8AbgBPAHAAZQByAGEAdABvAHIAIgA6ACIAewBcACIAQgBhAHMAZQBsAGkAbgBlAFQAaQBtAGUAcwBwAGEAbgBcACIAOgBcACIAMAAwADoANAAwADoAMAAwAFwAIgAsAFwAIgBJAG4AcwBpAGcAaAB0AHMAUwBlAHIAdgBpAGMAZQBMAGEAZwBcACIAOgBcACIAMAAwADoAMAAwADoAMAAwAFwAIgAsAFwAIgBCAHUAZgBmAGUAcgBUAGkAbQBlAFwAIgA6AFwAIgAwADAAOgAwADEAOgAwADAAXAAiACwAXAAiAEIAbABvAGIAUwB0AG8AcgBhAGcAZQBMAG8AZwBnAGkAbgBnAEUAbgBhAGIAbABlAGQAXAAiADoAZgBhAGwAcwBlACwAXAAiAFUAcwBlAHIAUwB1AHAAcAByAGUAcwBzAGkAbwBuAHMAXAAiADoAbgB1AGwAbAAsAFwAIgBQAHIAbwBmAGkAbABlAEkAZABcACIAOgAwACwAXAAiAEUAbQBhAGkAbABUAHkAcABlAFwAIgA6ADAALABcACIAUgBkAGQARgBhAGkAbAB1AHIAZQBzAFMAcABpAGsAZQBUAGgAcgBlAHMAaABvAGwAZABcACIAOgAzAC4AMAAsAFwAIgBSAGEAdwBQAHIAbwBhAGMAdABpAHYAZQBSAHUAbABlAEMAbwBuAGYAaQBnAFwAIgA6AG4AdQBsAGwAfQAiACwAIgBFAG4AYQBiAGwAZQBTAGUAbgBkAEUAbQBhAGkAbABUAG8AQwB1AHMAdABvAG0AIgA6AGYAYQBsAHMAZQAsACIAQwB1AHMAdABvAG0ARQBtAGEAaQBsAHMARQBuAGMAbwBkAGUAZAAiADoAIgAiACwAIgBFAG4AYQBiAGwAZQBTAGUAbgBkAEUAbQBhAGkAbABUAG8ATwB3AG4AZQByAHMAIgA6AGYAYQBsAHMAZQB9AA=="
+                    },
+                    "operator": "GreaterThan",
+                    "threshold": 2,
+                    "windowSize": "PT1H"
+                },
+                "action": {
+                    "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
+                    "sendToServiceOwners": true,
+                    "customEmails": []
+                }
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.insights/components', parameters('components_PacktFunctionApp_name'))]"
+            ]
+        },
+        {
+            "comments": "",
+            "type": "microsoft.insights/components",
+            "kind": "web",
+            "name": "[parameters('components_PacktFunctionApp_name')]",
+            "apiVersion": "2015-05-01",
+            "location": "westeurope",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "Application_Type": "web",
+                "Flow_Type": null,
+                "Request_Source": "IbizaWebAppExtensionCreate",
+                "HockeyAppId": null,
+                "SamplingPercentage": null
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_packtfunctionapb805_name')]",
+            "apiVersion": "2018-07-01",
+            "location": "centralus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "Y1",
+                "tier": "Dynamic",
+                "size": "Y1",
+                "family": "Y",
+                "capacity": 0
+            },
+            "kind": "functionapp",
+            "name": "[parameters('serverfarms_CentralUSPlan_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "Central US",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_CentralUSPlan_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "",
+            "type": "Microsoft.Web/sites",
+            "kind": "functionapp",
+            "name": "[parameters('sites_PacktFunctionApp_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "Central US",
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_PacktFunctionApp_name'),'packtfunctionapp.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_PacktFunctionApp_name'),'packtfunctionapp.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_CentralUSPlan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 1536,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null,
+                "httpsOnly": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_CentralUSPlan_name'))]"
+            ]
+        },
+        {
+            "comments": "",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_PacktFunctionApp_name'), '/', parameters('config_web_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "Central US",
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$PacktFunctionApp",
+                "publishingPassword": null,
+                "appSettings": null,
+                "azureStorageAccounts": {},
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "clientSecretCertificateThumbprint": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": {
+                    "allowedOrigins": [
+                        "https://functions.azure.com",
+                        "https://functions-staging.azure.com",
+                        "https://functions-next.azure.com"
+                    ],
+                    "supportCredentials": false
+                },
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "ftpsState": "AllAllowed",
+                "reservedInstanceCount": 0
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_PacktFunctionApp_name'))]"
+            ]
+        },
+        {
+            "comments": "",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_PacktFunctionApp_name'), '/', parameters('hostNameBindings_packtfunctionapp.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "PacktFunctionApp",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_PacktFunctionApp_name'))]"
+            ]
+        }
+    ]
+}
