@@ -1,0 +1,40 @@
+stages:
+    - stage: BuildVirtualMachines
+      displayName: Build and Publish VM
+     
+      jobs:
+      - job: BuildVirtualMachines
+        pool:
+          name: Azure Pipelines
+          vmImage: vs2017-win2016
+     
+        steps:
+     
+        - task: PublishBuildArtifacts@1
+          inputs:
+            PathtoPublish: ''
+            ArtifactName: 'VirtualMachines'
+            publishLocation: 'Container'
+     
+    - stage: DeployVirtualMachines
+      displayName: DeployVirtualMachines
+      jobs:
+      - job: VM
+        pool:
+          name: Azure Pipelines
+          vmImage: windows-2019
+        steps:
+        - task: DownloadPipelineArtifact@2
+          inputs:
+            buildType: 'current'
+            artifactName: 'VirtualMachines'
+            targetPath: '$(Pipeline.Workspace)'
+     
+        - task: AzureResourceGroupDeployment@2
+          displayName: 'Azure Deployment: IIS VM '
+          inputs:
+            azureSubscription: 'Teaching Subscription (202da7f2-d56b-46bd-8c2f-7a8ae80421a7)'
+            resourceGroupName: 'packtpubdevopsdeployresourcegroup'
+            location: eastus
+            csmFile: '$(Pipeline.Workspace)\azuredeploy.json'
+            csmParametersFile: '$(Pipeline.Workspace)\azuredeploy.parameters.json'
