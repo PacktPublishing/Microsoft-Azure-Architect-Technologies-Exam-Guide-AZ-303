@@ -1,15 +1,22 @@
-gitrepo="https://github.com/PacktPublishing/Microsoft-Azure-Architect-Technologies-Exam-Guide-AZ-300/Chapter14/PacktPubToDoAPI"
-webappname="PacktPubToDoAPI"
+#create basic webapi
+mkdir webapi
+cd webapi
+dotnet new webapi
 
-# Create a resource group.
-az group create --location eastus --name PacktWebAppResourceGroup
+#setup git
+git config user.email “myemail@mydomain.com”
+git config user.name “yourname”
+git init
+git add .
+git commit -m "first commit"
 
-# Create an App Service plan in the FREE tier.
-az appservice plan create --name $webappname --resource-group PacktWebAppResourceGroup --sku FREE
+#setup the webapp
+az webapp deployment user set --user-name auniqueusername
+az group create --location eastus --name PacktWebAppRSG
+az appservice plan create --name packtpubwebapi --resource-group PacktWebAppRSG --sku FREE
+az webapp create --name packtpubwebapi --resource-group PacktWebAppRSG --plan packtpubwebapi 
+az webapp deployment source config-local-git --name packtpubwebapi --resource-group PacktWebAppRSG
 
-# Create a web app.
-az webapp create --name $webappname --resource-group PacktWebAppResourceGroup --plan $webappname
-
-# Deploy code from a public GitHub repository. 
-az webapp deployment source config --name $webappname --resource-group PacktWebAppResourceGroup \
---repo-url $gitrepo --branch master --manual-integration
+#deploy to the webapp
+git remote add azure https://yourdeploymentusername@packtpubwebapi.scm.azurewebsites.net/packtpubwebapi.git
+git push azure master
