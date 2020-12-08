@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29215.179
+VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktPubToDoAPI", "PacktPubToDoAPI\PacktPubToDoAPI.csproj", "{B8958017-02FC-450D-A6F6-6149B5EC46F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktPubToDoAPI", "PacktPubToDoAPI.csproj", "{072E69B8-37AC-40FF-B9EE-A420D443FD72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B8958017-02FC-450D-A6F6-6149B5EC46F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8958017-02FC-450D-A6F6-6149B5EC46F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8958017-02FC-450D-A6F6-6149B5EC46F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8958017-02FC-450D-A6F6-6149B5EC46F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072E69B8-37AC-40FF-B9EE-A420D443FD72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072E69B8-37AC-40FF-B9EE-A420D443FD72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072E69B8-37AC-40FF-B9EE-A420D443FD72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072E69B8-37AC-40FF-B9EE-A420D443FD72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6363BE8B-F80C-4FA8-AE8D-499E4730195C}
+		SolutionGuid = {32ED18A9-BFC3-419E-89B6-16418B873775}
 	EndGlobalSection
 EndGlobal
