@@ -1,3 +1,15 @@
+
+### Get this product for $5
+
+<i>Packt is having its biggest sale of the year. Get this eBook or any other book, video, or course that you like just for $5 each</i>
+
+
+<b><p align='center'>[Buy now](https://packt.link/9781800568570)</p></b>
+
+
+<b><p align='center'>[Buy similar titles for just $5](https://subscription.packtpub.com/search)</p></b>
+
+
 # Implementing Microsoft Azure Architect Technologies: AZ-303 Exam Prep and Beyond – Second Edition
  
 <a href="https://www.packtpub.com/product/Implementing-Microsoft-Azure-Architect-Technologies-AZ-303-Exam-Prep-and-Beyond/9781800568570?utm_source=github&utm_medium=repository&utm_campaign=9781800568570"><img src="https://static.packt-cdn.com/products/9781800568570/cover/smaller" alt="Implementing Microsoft Azure Architect Technologies: AZ-303 Exam Prep and Beyond – Second Edition" height="256px" align="right"></a>
